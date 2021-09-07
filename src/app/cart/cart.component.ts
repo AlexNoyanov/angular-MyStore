@@ -23,11 +23,24 @@ import { FormBuilder } from '@angular/forms';     // For User data
   export class CartComponent {
 
     items = this.cartService.getItems();
+
+    checkoutForm = this.formBuilder.group({ // User's data checkout form
+      name: '',
+      address: ''
+    });
   
     constructor(
       private cartService: CartService,
+      private formBuilder: FormBuilder, // FormBuilder for user's info
 
     ) { }
+
+      onSubmit(): void {  // To process user's form
+    // Process checkout data here
+    this.items = this.cartService.clearCart();
+    console.warn('Your order has been submitted', this.checkoutForm.value);
+    this.checkoutForm.reset();
+  }
   
 
   ngOnInit() {
