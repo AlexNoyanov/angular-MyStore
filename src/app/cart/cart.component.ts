@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
 
- import { Product, products } from '../products';
+import { FormBuilder } from '@angular/forms';     // For User data
+
+ import { Product, products } from '../products'; // Products 
  //import {currency} from './shared/currency.pipe';
 
 @Component({
