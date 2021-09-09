@@ -35,6 +35,15 @@ import { FormBuilder } from '@angular/forms';     // For User data
 
     ) { }
 
+    // Top clear the cart:
+  
+
+    clearTheCart():void {
+      this.items = this.cartService.clearCart();
+      console.warn('Your cart has been cleared!', this.checkoutForm.value);
+      //this.checkoutForm.reset();
+    }
+
       onSubmit(): void {  // To process user's form
     // Process checkout data here
     this.items = this.cartService.clearCart();

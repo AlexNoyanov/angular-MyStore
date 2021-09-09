@@ -1,8 +1,10 @@
 <h3>Cart</h3>
-<div class="cart-item" *ngFor="let item of items">
+<div id = "cart-order" class="cart-item" *ngFor="let item of items">
   <span>{{ item.name }}</span>
   <span>{{ item.price | currency }}</span>
 </div>
+
+<button (click) = "clearTheCart()" class="button" type="submit" id = "clearButton">Clear the cart</button>
 
 <h3> Shipping details below:</h3>
 <p>
@@ -26,6 +28,6 @@
   </div>
 
   <button class="button" type="submit">Purchase</button>
- 
+
 
 </form>
